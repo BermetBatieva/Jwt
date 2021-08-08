@@ -44,6 +44,7 @@ public class SecurityConfig  {
     @Configuration
     public class ApiSecurityAdapter extends WebSecurityConfigurerAdapter {
 
+        @Autowired
         private final JwtRequestFilter jwtFilter;
 
         @Override

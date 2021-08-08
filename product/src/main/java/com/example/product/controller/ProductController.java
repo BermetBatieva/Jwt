@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
 @RequestMapping("/product")
 public class ProductController {
 
@@ -18,7 +18,7 @@ public class ProductController {
     ProductService productService;
 
 
-    @GetMapping(value="/all")
+    @GetMapping("/all")
     public List<Product> getAllProduct() {
         return productService.getAllProduct();
     }

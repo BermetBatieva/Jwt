@@ -12,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MainController {
@@ -49,5 +46,10 @@ public class MainController {
             throw new Exception("Incorrect username or password!!!",e);
         }
         return jwtTokenUtil.generateToken(authenticationRequest.getUsername());
+    }
+
+    @GetMapping("/")
+    public String HelloUser(){
+        return "Hello, User!";
     }
 }
